@@ -1,27 +1,16 @@
-const mongoose = require('mongoose');
-const password = encodeURIComponent("Srmsam@33");
-const connect = mongoose.connect(`mongodb+srv://modysamay:${password}@cluster1.mmkk8ne.mongodb.net/?retryWrites=true&w=majority`);
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://modysamay:Srmsam%4033@cluster1.mmkk8ne.mongodb.net";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-connect.then(()=> {
-    console.log("Connected to db🚀");
-})
+client.connect().then(() => {
+    console.log("Connected to MongoDB");
 
-.catch(() => {
-    console.log("Failed connectionn to db");
-})
+    const db = client.db("Users");
+    const collection = db.collection("user_details");
 
-const userSchema = mongoose.Schema({
-    name:{
-        type: String,
-        required: true
-    },
+    // Your other code using the collection goes here
 
-    password:{
-        type: String,
-        required: true
-    }
-
+}).catch((error) => {
+    console.error("Failed to connect to MongoDB:", error);
 });
 
-const collection = mongoose.model('user_details', userSchema);
-module.exports = collection;

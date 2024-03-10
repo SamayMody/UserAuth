@@ -6,6 +6,23 @@
     <title>Home</title>
   </head>
   <body>
-    <h1>Hello moto!</h1>
+    <div class="form-container">
+      <h2>Home</h2>
+      <form action="/user" method="post">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="username"
+            placeholder="Enter username"
+            required
+            autocomplete="off"
+          />
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
   </body>
 </html>
