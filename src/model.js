@@ -1,25 +1,27 @@
-let users = [];
+const mongoose = require('mongoose');
+const password = encodeURIComponent("Srmsam@33");
+const connect = mongoose.connect(`mongodb+srv://modysamay:${password}@cluster1.mmkk8ne.mongodb.net/?retryWrites=true&w=majority`);
 
-const userSchema = {
-    username: {
+connect.then(()=> {
+    console.log("Connected to db🚀");
+})
+
+.catch(() => {
+    console.log("Failed connectionn to db");
+})
+
+const userSchema = mongoose.Schema({
+    name:{
         type: String,
         required: true
     },
 
-    password: { 
+    password:{
         type: String,
         required: true
-    },
-    
-};
+    }
 
-function create(userData){
-    users.push(userData);
-    return userData;
-}
+});
 
-function getusers(userData){
-    return users;
-}
-
-module.exports = {create, getusers , userSchema};
+const collection = mongoose.model('user_details', userSchema);
+module.exports = collection;
