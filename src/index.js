@@ -1,7 +1,11 @@
 const express = require('express');
 const bcrypt = require('bcrypt');
+
+const dotenv = require("dotenv");
+dotenv.config({path: './.env'});
+
 const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://modysamay:Srmsam%4033@cluster1.mmkk8ne.mongodb.net";
+const uri = process.env.MONGOURI;
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 client.connect().then(() => {
