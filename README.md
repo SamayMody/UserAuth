@@ -1,4 +1,4 @@
-# Alexa WebDev Backend task:
+# WebDev Backend task:
 
 ## Routes created :
 - **Signup** = localhost:5000/auth/signup
