@@ -8,7 +8,7 @@
   <body>
     <div class="form-container">
       <h2>Signup</h2>
-      <form action="/auth/signup" method="post">
+      <form action="/api/signup" method="post">
         <div class="form-group">
           <label for="name">Name:</label>
           <input
@@ -18,17 +18,6 @@
             placeholder="Enter username"
             required
             autocomplete="off"
-          />
-        </div>
-
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter password"
-            required
           />
         </div>
 
@@ -43,8 +32,19 @@
           />
         </div>
 
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+            required
+          />
+        </div>
+
         <button type="submit" class="submit-btn">Signin</button>
-        <p>Have an account? <a href="/auth/login">LogIn</a></p>
+        <p>Have an account? <a href="/api/login">LogIn</a></p>
       </form>
     </div>
   </body>

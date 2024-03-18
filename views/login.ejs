@@ -8,16 +8,15 @@
   <body>
     <div class="form-container">
       <h2>Login</h2>
-      <form action="/auth/login" method="post">
+      <form action="/api/login" method="post">
         <div class="form-group">
-          <label for="name">Name:</label>
+          <label for="email">Email:</label>
           <input
-            type="text"
-            id="name"
-            name="username"
-            placeholder="Enter username"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter email"
             required
-            autocomplete="off"
           />
         </div>
 
@@ -34,7 +33,7 @@
 
         <button type="submit" class="submit-btn">Login</button>
       </form>
-      <p>Don't have an account? <a href="/auth/signup">Signup</a></p>
+      <p>Don't have an account? <a href="/api/signup">Signup</a></p>
     </div>
   </body>
 </html>
